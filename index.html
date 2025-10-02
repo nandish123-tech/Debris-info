@@ -212,7 +212,7 @@
 
 <script>
 /* Utility: format helpers */
-const fmtMoneyM = v => $${v.toFixed(2)}M;
+const fmtMoneyM = v => `$${v.toFixed(2)}M`;
 const clamp = (n,min,max)=>Math.max(min,Math.min(max,n));
 
 /* Preserve original Add Entry behavior as a simple clear */
@@ -249,17 +249,17 @@ function analyze(){
   const savingsPct  = savingsM/earthCostM*100;
 
   // Fill Analysis view fields exactly like screenshots
-  document.getElementById('out-id').textContent   = 2001_045B;
-  document.getElementById('out-type').textContent = Defunct Spy Satellite;
-  document.getElementById('out-al').textContent   = ${al} kg;
-  document.getElementById('out-ti').textContent   = ${ti} kg;
-  document.getElementById('out-si').textContent   = ${si} kg;
-  document.getElementById('out-total').textContent= ${total} kg;
+  document.getElementById('out-id').textContent   = `2001_045B`;
+  document.getElementById('out-type').textContent = `Defunct Spy Satellite`;
+  document.getElementById('out-al').textContent   = `${al} kg`;
+  document.getElementById('out-ti').textContent   = `${ti} kg`;
+  document.getElementById('out-si').textContent   = `${si} kg`;
+  document.getElementById('out-total').textContent= `${total} kg`;
 
   document.getElementById('c-earth').textContent = fmtMoneyM(earthCostM);
   document.getElementById('c-debris').textContent= fmtMoneyM(debrisCostM);
   document.getElementById('c-save').textContent  = fmtMoneyM(savingsM);
-  document.getElementById('c-pct').textContent   = ${savingsPct.toFixed(1)}%;
+  document.getElementById('c-pct').textContent   = `${savingsPct.toFixed(1)}%`;
   document.getElementById('genTime').textContent = new Date().toLocaleString();
 
   // Switch views
